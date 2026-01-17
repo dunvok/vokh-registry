@@ -1,0 +1,13 @@
+# Dependencias y Builds
+node_modules
+dist
+.turbo
+coverage
+
+# Archivos generados autimáticamente
+pnpm-lock.yaml
+
+# Directorios de build específicos de frameworks (si usas Next/Vite)
+.next
+.output
+build
