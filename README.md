@@ -39,6 +39,12 @@ pnpm pack
 
 For distributed systems, leverage the recursive execution flag (-r) or filter specific scopes to generate artifacts across multiple workspaces simultaneously.
 
+> [!IMPORTANT] Naming Protocol & Zero-Overhead Parsing To maintain zero-latency responses, the engine does not unpack archives to read metadata. Versioning is inferred strictly from the filename signature.
+>
+> Enforced Schema: <package-name>-<version>.tgz
+>
+> Constraint: Artifacts deviating from this pattern will be treated as noise and ignored by the resolution vector.
+
 ```bash
 # Option A: Pack a specific workspace
 pnpm --filter "@my-org/*" pack
@@ -66,7 +72,11 @@ Server Instantiation Execute the serve command to boot the resolution engine. Th
 **Port Assignment**: The service binds to port 9999 by default. To realign the ingress point, specify the port property in your vokh.config.yaml.
 
 ```bash
+# default config file vokh.config.yaml
 vokh-registry serve
+
+# custom config file
+vokh-registry serve --config <config-path>
 ```
 
 ## Hybrid Topology Configuration (Scoped Resolution)
