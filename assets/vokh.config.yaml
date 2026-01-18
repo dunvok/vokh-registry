@@ -1,0 +1,4 @@
+port: 8080
+rules:
+  - name: vokh-registry
+    path: .
