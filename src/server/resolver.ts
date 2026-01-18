@@ -54,8 +54,10 @@ export const findLocalPackage = async (
       const resolvedPath = replaceMatches(scope, packageName, path);
       if (fs.existsSync(resolvedPath)) {
         const shasum = await calculateShasum(resolvedPath);
+        const stats = fs.statSync(resolvedPath);
+        const lastModified = Math.floor(stats.mtimeMs);
         return {
-          version: getPackageVersion(resolvedPath),
+          version: `${getPackageVersion(resolvedPath)}-${lastModified}`,
           path: resolvedPath,
           shasum: shasum,
         };

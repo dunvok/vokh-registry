@@ -13,15 +13,14 @@ const metadatResolution = (fastify: FastifyInstance, config: VokhConfig) => {
       return reply.code(404).send({ error: 'Not found in local vokh registry' });
     }
 
-    const lastVersion = `${packageInfo.version}-${Date.now()}`;
     const manifest = {
       _id: name,
       name: name,
       'dist-tags': {
-        latest: lastVersion,
+        latest: packageInfo.version,
       },
       versions: {
-        [lastVersion]: {
+        [packageInfo.version]: {
           name: name,
           version: packageInfo.version,
           dist: {
