@@ -15,11 +15,11 @@ port: 5000
 rules:
   # Maps a specific scope to a local directory
   - name: '@my-org/*'
-    path: './packages/*'
+    path: '<path>/my-org-*-1.0.0.tgz'
 
   # Direct mapping for a standalone core package
   - name: 'vokh-core'
-    path: './libs/core'
+    path: './libs/core/file.tgz'
 ```
 
 ## Artifact Generation Protocol
