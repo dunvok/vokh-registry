@@ -6,7 +6,6 @@ export default defineConfig({
   },
   outputOptions: {
     entryFileNames: '[name].js',
-    assetFileNames: '[name][extname]',
   },
   logLevel: 'info',
   format: ['esm'],
