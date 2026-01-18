@@ -7,6 +7,9 @@ export default defineConfig({
   outputOptions: {
     entryFileNames: '[name].js',
   },
+  banner: {
+    js: '#!/usr/bin/env node',
+  },
   logLevel: 'info',
   format: ['esm'],
   platform: 'node',

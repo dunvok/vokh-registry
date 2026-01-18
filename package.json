@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Vokh (echo), It is a readonly npm registry linked to a disk monorepos",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "type": "module",
   "bin": {
@@ -29,12 +31,17 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepublishOnly": "pnpm run test && pnpm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.27.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@types/node": "^25.0.9",
