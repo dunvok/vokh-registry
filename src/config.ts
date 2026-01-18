@@ -3,7 +3,7 @@ import path from 'path';
 import YAML from 'yaml';
 
 export interface PackageRule {
-  name: string;
+  scope: string;
   path: string;
 }
 
