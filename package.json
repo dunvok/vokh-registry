@@ -1,12 +1,16 @@
 {
   "name": "@dunvok/vokh-registry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vokh (echo), It is a readonly npm registry linked to a disk monorepos",
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dunvok/vokh-registry.git"
+  },
   "type": "module",
   "bin": {
     "vokh-registry": "dist/index.js"
